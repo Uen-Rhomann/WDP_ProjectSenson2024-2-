@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scent Haven</title>
+    <style>
+        /* styles.css */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: #f4f4f4;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: padding 0.3s ease-in-out;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        section {
+            padding: 120px 0 50px;
+        }
+
+        section h2 {
+            margin-top: 0;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+        }
+
+        .perfume-item {
+            width: 300px;
+            margin: 10px;
+            background-color: rgba(255, 255, 255, 0.5); /* Transparent background */
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .perfume-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .perfume-item img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        /* Slider styles */
+        .slider-container {
+            width: 100%;
+            margin: 20px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider {
+            display: flex;
+            animation: slide-animation 10s infinite;
+        }
+
+        .slide {
+            width: 100%;
+            height: 300px; /* Adjust height as needed */
+            flex-shrink: 0;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes slide-animation {
+            0% { transform: translateX(0); }
+            20% { transform: translateX(-100%); }
+            40% { transform: translateX(-200%); }
+            60% { transform: translateX(-300%); }
+            80% { transform: translateX(-400%); }
+            100% { transform: translateX(0); }
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>𝚂𝙲𝙴𝙽𝚃 𝙷𝙰𝚅𝙴𝙽</h1>
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="location.reload()">Home</a></li>
+                    <li><a href="#" onclick="showAbout()">About Us</a></li>
+                    <li><a href="mailto:rhomannuen@gmail.com">Contact</a></li>
+                    <li><a href="#cart">Cart</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="dior">
+        <div class="container">
+            <h2>ＤＩＯＲ</h2>
+            <div class="gallery">
+                <div class="perfume-item">
+                    <h3>Dior Sauvage</h3>
+                    <img src="F:\WEBSITE WEB DESIGN\PICTURES\2272645.jpg" alt="Dior Sauvage">
+                    <p>Description: A fresh and spicy fragrance for men.</p>
+                    <p>Price: $75.00</p>
+                    <button onclick="addToCart('Dior Sauvage')">Add to Cart</button>
+                </div>
+            <div class="perfume-item">
+                <h3>Dior Farenheit</h3>
+                <img src="F:\WEBSITE WEB DESIGN\PICTURES\Christian-Dior-Fahrenheit-100ml.jpg" alt="Perfume Name 2">
+                <p>Description: A warm and woody scent, combined with floral and spicy undertones.</p>
+                <p>Price: $80.00</p>
+                <button onclick="addToCart('Dior Farenheit')">Add to Cart</button>
+            </div>
+            <div class="perfume-item">
+                <h3>Miss Dior</h3>
+                <img src="F:\WEBSITE WEB DESIGN\PICTURES\Christian-Dior-Miss-Dior-Blooming-Bouquet-Eau-De-Toilette-1-7-Ounces_c3aa5a92-8fae-4d83-aa76-f02ed5b0d966_1.be808ab66d532816b708ba88fd163919.webp" alt="Perfume Name 3">
+                <p>Description: A floral and elegant fragrance, with notes of rose, jasmine, and patchouli, creating a romantic and feminine aura.</p>
+                <p>Price: $85.00</p>
+                <button onclick="addToCart('Miss Dior')">Add to Cart</button>
+            </div>
+            <div class="perfume-item">
+                <h3>J'adore</h3>
+                <img src="F:\WEBSITE WEB DESIGN\PICTURES\1511153.jpg" alt="Perfume Name 4">
+                <p>Description: A luxurious and floral fragrance, featuring notes of jasmine, rose, and ylang-ylang, evoking a sense of sophistication and sensuality.</p>
+                <p>Price: $90.00</p>
+                <button onclick="addToCart('J\'adore')">Add to Cart</button>
+            </div>
+            </div>
+        </div>
+    </section>
+
+   <section id="chanel">
+    <div class="container">
+        <h2>𝖢𝗁𝖺𝗇𝖾𝗅</h2>
+        <div class="gallery">
+            <div class="perfume-item">
+                <h3>Chanel No. 5</h3>
+                <img src="F:\WEBSITE WEB DESIGN\PICTURES\n-5-eau-de-parfum-spray-3-4fl-oz--packshot-default-125530-8833876492318_1024x1024.webp" alt="Chanel No. 5">
+                <p>Description: A timeless and iconic fragrance for women.</p>
+                <p>Price: $100.00</p>
+                <button onclick="addToCart('Chanel No. 5')">Add to Cart</button>
+            </div>
+            <div class="perfume-item">
+                <h3>Chanel Chance</h3>
+                <img src="F:\WEBSITE WEB DESIGN\PICTURES\s-l1200.jpg" alt="Chanel Chance">
+                <p>Description: A fresh and vibrant fragrance for women.</p>
+                <p>Price: $120.00</p>
+                <button onclick="addToCart('Chanel Chance')">Add to Cart</button>
+            </div>
+            <div class="perfume-item">
+                <h3>Chanel Coco Mademoiselle</h3>
+                <img src="F:\WEBSITE WEB DESIGN\PICTURES\Chanel-Coco-Mademoiselle-Intense-Eau-De-Parfum-Spray-100ml-3-3oz_c2fbcd67-022a-4243-bfdc-6b6f4df1431f.f2d32b1ed81dbb79484787e6d75c1ab3.webp" alt="Chanel Coco Mademoiselle">
+                <p>Description: A modern and elegant fragrance for women.</p>
+                <p>Price: $110.00</p>
+                <button onclick="addToCart('Chanel Coco Mademoiselle')">Add to Cart</button>
+            </div>
+            <div class="perfume-item">
+                <h3>Chanel Bleu de Chanel</h3>
+                <img src="F:\WEBSITE WEB DESIGN\PICTURES\chanel-006003cl_01.jpg" alt="Chanel Bleu de Chanel">
+                <p>Description: A sophisticated and masculine fragrance for men.</p>
+                <p>Price: $90.00</p>
+                <button onclick="addToCart('Chanel Bleu de Chanel')">Add to Cart</button>
+            </div>
+            </div>
+        </div>
+    </section>
+
+  <section id="bvlgari">
+    <div class="container">
+        <h2>𝙱𝚅𝙻𝙶𝙰𝚁𝙸</h2>
+        <div class="gallery">
+            <div class="perfume-item">
+                <h3>BVLGARI Man in Black</h3>
+                <img src="F:\WEBSITE WEB DESIGN\PICTURES\1732791_b1396e46-af5d-4e64-9202-89556b1a54fa.webp" alt="BVLGARI Man in Black">
+                <p>Description: A bold and charismatic fragrance for men.</p>
+                <p>Price: $120.00</p>
+                <button onclick="addToCart('BVLGARI Man in Black')">Add to Cart</button>
+            </div>
+            <div class="perfume-item">
+                <h3>BVLGARI Aqua Atlantique</h3>
+                <img src="F:\WEBSITE WEB DESIGN\PICTURES\bvlgari-aqua-atlantique-100ml-perfume-philippines-best-price-2.webp" alt="BVLGARI Aqua Atlantique">
+                <p>Description: A refreshing and invigorating fragrance for men.</p>
+                <p>Price: $100.00</p>
+                <button onclick="addToCart('BVLGARI Aqua Atlantique')">Add to Cart</button>
+            </div>
+            <div class="perfume-item">
+                <h3>BVLGARI Goldea The Roman Night</h3>
+                <img src="F:\WEBSITE WEB DESIGN\PICTURES\bvlgari-009194bg_01.jpg" alt="BVLGARI Goldea The Roman Night">
+                <p>Description: A seductive and mysterious fragrance for women.</p>
+                <p>Price: $150.00</p>
+                <button onclick="addToCart('BVLGARI Goldea The Roman Night')">Add to Cart</button>
+            </div>
+            <div class="perfume-item">
+                <h3>BVLGARI Splendida Rose Rose</h3>
+                <img src="F:\WEBSITE WEB DESIGN\PICTURES\images.jpg" alt="BVLGARI Splendida Rose Rose">
+                <p>Description: A romantic and delicate fragrance for women.</p>
+                <p>Price: $110.00</p>
+                <button onclick="addToCart('BVLGARI Splendida Rose Rose')">Add to Cart</button>
+            </div>
+            </div>
+        </div>
+    </section>
+
+   <section id="calvin-klein">
+    <div class="container">
+        <h2>𝙲𝚊𝚕𝚟𝚒𝚗 𝙺𝚕𝚎𝚒𝚗</h2>
+        <div class="gallery">
+            <div class="perfume-item">
+                <h3>Calvin Klein Eternity for Men</h3>
+                <img src="F:\WEBSITE WEB DESIGN\PICTURES\0030_calvin_klein-2890553.webp" alt="Calvin Klein Eternity for Men">
+                <p>Description: A classic and timeless fragrance for men.</p>
+                <p>Price: $80.00</p>
+                <button onclick="addToCart('Calvin Klein Eternity for Men')">Add to Cart</button>
+            </div>
+            <div class="perfume-item">
+                <h3>Calvin Klein Euphoria for Women</h3>
+                <img src="F:\WEBSITE WEB DESIGN\PICTURES\s-l1200 (1).jpg" alt="Calvin Klein Euphoria for Women">
+                <p>Description: A captivating and sensual fragrance for women.</p>
+                <p>Price: $90.00</p>
+                <button onclick="addToCart('Calvin Klein Euphoria for Women')">Add to Cart</button>
+            </div>
+            <div class="perfume-item">
+                <h3>Calvin Klein CK One</h3>
+                <img src="F:\WEBSITE WEB DESIGN\PICTURES\Calvin-Klein-Ck-One-Eau-De-Toilette-Spray-Unisex-Perfume-3-4-Oz_ffb8c4d9-686f-46b0-8a7a-4f9994ef06e8_1.7aa56e5c88a2a44c35b9fe6810d8cdac.webp" alt="Calvin Klein CK One">
+                <p>Description: A fresh and youthful unisex fragrance.</p>
+                <p>Price: $70.00</p>
+                <button onclick="addToCart('Calvin Klein CK One')">Add to Cart</button>
+            </div>
+            <div class="perfume-item">
+                <h3>Calvin Klein Obsession for Men</h3>
+                <img src="F:\WEBSITE WEB DESIGN\PICTURES\41MeIKS01OL.jpg" alt="Calvin Klein Obsession for Men">
+                <p>Description: A powerful and masculine fragrance for men.</p>
+                <p>Price: $85.00</p>
+                <button onclick="addToCart('Calvin Klein Obsession for Men')">Add to Cart</button>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cart">
+        <div class="container">
+            <h2>Shopping Cart</h2>
+            <div id="cart-items"></div>
+            <button onclick="checkout()">Checkout</button>
+        </div>
+    </section>
+
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <img src="https://www.indoindians.com/wp-content/uploads/2015/09/All-About-Top-Fragrance-Shop.jpg" alt="Slide 1">
+            </div>
+            <div class="slide">
+                <img src="https://cdn.mos.cms.futurecdn.net/9obnUbHswXvzfZH7DNECdG-415-80.jpeg" alt="Slide 2">
+            </div>
+            <div class="slide">
+                <img src="https://wwd.com/wp-content/uploads/2022/02/Top-100-B-Inc.jpg?crop=245px%2C809px%2C1162px%2C650px&resize=1000%2C563" alt="Slide 3">
+            </div>
+            <div class="slide">
+                <img src="https://www.jeanpaulgaultier.com/us/sites/us/files/styles/scale_10_cols/public/2022-02/Home-Page-Parfums-pour-Hommes-Categorie.png.jpg?itok=eEAkV7Gl" alt="Slide 4">
+            </div>
+            <div class="slide">
+                <img src="https://www.fragrancex.com/blog/wp-content/uploads/2022/01/best-perfume-brands-all-time.png" alt="Slide 5">
+            </div>
+        </div>
+    </div>
+	
+	<footer>
+        <div class="container">
+            <p>&copy; 2024 Scent Haven. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    // script.js
+    let cart = [];
+
+    function addToCart(item) {
+        cart.push({ name: item, quantity: 1, price: getPrice(item) });
+        updateCart();
+    }
+
+    function getPrice(item) {
+        switch (item) {
+            case 'Dior Sauvage':
+                return 75.00;
+            case 'Dior Farenheit':
+                return 80.00;
+            case 'Miss Dior':
+                return 85.00;
+            case 'J\'adore':
+                return 90.00;
+            case 'Chanel No. 5':
+                return 100.00;
+            case 'Chanel Chance':
+                return 120.00;
+            case 'Chanel Coco Mademoiselle':
+                return 110.00;
+            case 'Chanel Bleu de Chanel':
+                return 90.00;
+            case 'BVLGARI Man in Black':
+                return 120.00;
+            case 'BVLGARI Aqua Atlantique':
+                return 100.00;
+            case 'BVLGARI Goldea The Roman Night':
+                return 150.00;
+            case 'BVLGARI Splendida Rose Rose':
+                return 110.00;
+            case 'Calvin Klein Eternity for Men':
+                return 80.00;
+            case 'Calvin Klein Euphoria for Women':
+                return 90.00;
+            case 'Calvin Klein CK One':
+                return 70.00;
+            case 'Calvin Klein Obsession for Men':
+                return 85.00;
+            default:
+                return 0.00;
+        }
+    }
+
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+            document.querySelector("header").style.padding = "10px 0";
+        } else {
+            document.querySelector("header").style.padding = "20px 0";
+        }
+    }
+
+    function updateCart() {
+        const cartItems = document.getElementById('cart-items');
+        cartItems.innerHTML = '';
+        cart.forEach(item => {
+            const newItem = document.createElement('div');
+            newItem.innerHTML = `
+                <div>
+                    <span>${item.name}</span>
+                    <button onclick="decrementQuantity('${item.name}')">-</button>
+                    <span>${item.quantity}</span>
+                    <button onclick="incrementQuantity('${item.name}')">+</button>
+                    <span>$${(item.price * item.quantity).toFixed(2)}</span>
+                </div>
+            `;
+            cartItems.appendChild(newItem);
+        });
+    }
+
+    function decrementQuantity(item) {
+        const index = cart.findIndex(i => i.name === item);
+        if (cart[index].quantity > 1) {
+            cart[index].quantity--;
+        }
+        updateCart();
+    }
+
+    function incrementQuantity(item) {
+        const index = cart.findIndex(i => i.name === item);
+        cart[index].quantity++;
+        updateCart();
+    }
+
+    function checkout() {
+        const totalPrice = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+        alert(`Total Price: $${totalPrice.toFixed(2)}`);
+    }
+	 function showAbout() {
+            const aboutText = `
+                Welcome to Scent Haven, your ultimate destination for exquisite perfumes and fragrances. At Scent Haven, we curate the finest selection of perfumes from renowned brands around the world. Our mission is to provide you with an unforgettable olfactory experience, allowing you to indulge in luxury and sophistication.
+                
+                With a wide range of fragrances for both men and women, you're sure to find the perfect scent that reflects your personality and style. Whether you prefer fresh and citrusy notes or warm and woody undertones, we have something for everyone.
+                
+                Experience the magic of fragrance at Scent Haven. Shop now and discover your signature scent!
+            `;
+            alert(aboutText);
+        }
+    </script>
+</body>
+</html>
